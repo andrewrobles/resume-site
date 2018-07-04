@@ -46,17 +46,7 @@ window.onload=function(){
          return i == -1 ? arr.length - 1 : i;
       }
    }
-            
-   function getwrapCrementIndex(arr, i, isIncrement) {
-      if (isIncrement) {
-         i = i + 1;
-         return i == arr.length ? 0 : i;
-      } else {
-         i = i - 1;
-         return i == -1 ? arr.length - 1 : i;
-      }
-   }
-   
+               
    function crementImageAction1(isIncrement) {
       imageIndex = getwrapCrementIndex(proj1ImagePaths, imageIndex, isIncrement);
       document.getElementById('proj1-displayed-img').src=proj1ImagePaths[imageIndex];
@@ -127,6 +117,56 @@ window.onload=function(){
    activateButton('left-arrow2', leftArrowAction2, true);
 
    //second project image functions above
+   
+   function getwrapCrementIndex(arr, i, isIncrement) {
+      if (isIncrement) {
+         i = i + 1;
+         return i == arr.length ? 0 : i;
+      } else {
+         i = i - 1;
+         return i == -1 ? arr.length - 1 : i;
+      }
+   }
+   
+   var proj3ImagePath1 = './assets/images/maps-images/out.jpg';
+   var proj3ImagePath2 = './assets/images/maps-images/in.jpg';
+   var proj3ImagePath3 = './assets/images/maps-images/astar.gif';
+   
+   var proj3ImagePaths = [proj3ImagePath1, proj3ImagePath2, proj3ImagePath3];
+   
+   function toggleProject3() {
+      projectsMenuStyleDisplay = projectsMenuStyleDisplay == 'block' ? 'none' : 'block';
+      proj3SectionStyleDisplay = proj3SectionStyleDisplay == 'block' ? 'none' : 'block';
+      projectsMenu.style.display = projectsMenuStyleDisplay;
+      proj3Section.style.display = proj3SectionStyleDisplay;
+      imageIndex = 0;
+   }
+   
+   
+   function rightArrowAction3() {
+      crementImageAction3(true);
+      crementDescriptionAction3(true);
+   }
+   
+   function leftArrowAction3() {
+      crementImageAction3(false);
+      crementDescriptionAction3(false);
+   }
+   
+   function crementImageAction3(isIncrement) {
+      imageIndex = getwrapCrementIndex(proj3ImagePaths, imageIndex, isIncrement);
+      document.getElementById('proj3-displayed-img').src=proj3ImagePaths[imageIndex];
+   }
+   
+   function crementDescriptionAction3(isIncrement) {
+      descriptionIndex = getwrapCrementIndex(proj1Descriptions, descriptionIndex, isIncrement);
+      document.getElementById('projectDescription3').innerHTML=proj1Descriptions[descriptionIndex];
+   }
+   
+   // activateButton('proj3', toggleProject3, true);
+   activateButton('back-arrow3', toggleProject3, true);
+   activateButton('right-arrow3', rightArrowAction3, true);
+   activateButton('left-arrow3', leftArrowAction3, true);
 
 
 
