@@ -29,10 +29,12 @@ window.onload=function(){
 
 
    function activateButton(name, action, isId) {
-      isId ? document.getElementById(name).addEventListener('click', function(e) {action();}) : document.getElementById(name).addEventListener('click', function(e) {
+      var el = document.getElementById(name)
+      if (el) {
+         isId ? el.addEventListener('click', function(e) {action();}) : document.getElementById(name).addEventListener('click', function(e) {
          action();});
+      }
    }
-
 
 
    function getwrapCrementIndex(arr, i, isIncrement) {
@@ -44,6 +46,43 @@ window.onload=function(){
          return i == -1 ? arr.length - 1 : i;
       }
    }
+            
+   function getwrapCrementIndex(arr, i, isIncrement) {
+      if (isIncrement) {
+         i = i + 1;
+         return i == arr.length ? 0 : i;
+      } else {
+         i = i - 1;
+         return i == -1 ? arr.length - 1 : i;
+      }
+   }
+   
+   function crementImageAction1(isIncrement) {
+      imageIndex = getwrapCrementIndex(proj1ImagePaths, imageIndex, isIncrement);
+      document.getElementById('proj1-displayed-img').src=proj1ImagePaths[imageIndex];
+   }
+   
+   function crementDescriptionAction1(isIncrement) {
+      descriptionIndex = getwrapCrementIndex(proj1Descriptions, descriptionIndex, isIncrement);
+      document.getElementById('projectDescription1').innerHTML=proj1Descriptions[descriptionIndex];
+   }
+   
+   function rightArrowAction1() {
+      crementImageAction1(true);
+      crementDescriptionAction1(true);
+   }
+   
+   function leftArrowAction1() {
+      crementImageAction1(false);
+      crementDescriptionAction1(false);
+   }
+   
+   // activateButton('proj1', toggleProject1, true);
+   // activateButton('back-arrow1', toggleProject1, true);
+   activateButton('right-arrow1', rightArrowAction1, true);
+   activateButton('left-arrow1', leftArrowAction1, true);
+   
+   //first project image functions above
 
 
    var proj2ImagePath1 = './assets/images/80s-video-game-images/menu.jpg';
@@ -88,5 +127,7 @@ window.onload=function(){
    activateButton('left-arrow2', leftArrowAction2, true);
 
    //second project image functions above
+
+
 
 }
