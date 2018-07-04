@@ -67,8 +67,6 @@ window.onload=function(){
       crementDescriptionAction1(false);
    }
    
-   // activateButton('proj1', toggleProject1, true);
-   // activateButton('back-arrow1', toggleProject1, true);
    activateButton('right-arrow1', rightArrowAction1, true);
    activateButton('left-arrow1', leftArrowAction1, true);
    
@@ -81,15 +79,6 @@ window.onload=function(){
    var proj2ImagePath4 = './assets/images/80s-video-game-images/characters.jpg';
 
    var proj2ImagePaths = [proj2ImagePath1, proj2ImagePath2, proj2ImagePath3, proj2ImagePath4];
-
-   function toggleProject2() {
-      projectsMenuStyleDisplay = projectsMenuStyleDisplay == 'block' ? 'none' : 'block';
-      proj2SectionStyleDisplay = proj2SectionStyleDisplay == 'block' ? 'none' : 'block';
-      projectsMenu.style.display = projectsMenuStyleDisplay;
-      proj2Section.style.display = proj2SectionStyleDisplay;
-      imageIndex = 0;
-   }
-
 
    function rightArrowAction2() {
       crementImageAction2(true);
@@ -111,8 +100,6 @@ window.onload=function(){
       document.getElementById('projectDescription2').innerHTML=proj1Descriptions[descriptionIndex];
    }
 
-   // activateButton('proj2', toggleProject2, true);
-   activateButton('back-arrow2', toggleProject2, true);
    activateButton('right-arrow2', rightArrowAction2, true);
    activateButton('left-arrow2', leftArrowAction2, true);
 
@@ -133,14 +120,6 @@ window.onload=function(){
    var proj3ImagePath3 = './assets/images/maps-images/astar.gif';
    
    var proj3ImagePaths = [proj3ImagePath1, proj3ImagePath2, proj3ImagePath3];
-   
-   function toggleProject3() {
-      projectsMenuStyleDisplay = projectsMenuStyleDisplay == 'block' ? 'none' : 'block';
-      proj3SectionStyleDisplay = proj3SectionStyleDisplay == 'block' ? 'none' : 'block';
-      projectsMenu.style.display = projectsMenuStyleDisplay;
-      proj3Section.style.display = proj3SectionStyleDisplay;
-      imageIndex = 0;
-   }
    
    
    function rightArrowAction3() {
@@ -163,11 +142,51 @@ window.onload=function(){
       document.getElementById('projectDescription3').innerHTML=proj1Descriptions[descriptionIndex];
    }
    
-   // activateButton('proj3', toggleProject3, true);
-   activateButton('back-arrow3', toggleProject3, true);
    activateButton('right-arrow3', rightArrowAction3, true);
    activateButton('left-arrow3', leftArrowAction3, true);
 
+
+   //third project image functions above
+
+   
+   proj4SectionStyleDisplay = 'none'
+   
+   var proj4ImagePath1 = './assets/images/3d-graphics-images/jupiter2.jpg';
+   var proj4ImagePath2 = './assets/images/3d-graphics-images/jupiter1.jpg';
+   var proj4ImagePath3 = './assets/images/3d-graphics-images/egg2.jpg';
+   var proj4ImagePath4 = './assets/images/3d-graphics-images/egg1.jpg';
+   var proj4ImagePath5 = './assets/images/3d-graphics-images/stack2.jpg';
+   var proj4ImagePath6 = './assets/images/3d-graphics-images/stack1.jpg';
+   var proj4ImagePath7 = './assets/images/3d-graphics-images/rear2.jpg';
+   var proj4ImagePath8 = './assets/images/3d-graphics-images/rear1.jpg';
+   var proj4ImagePath9 = './assets/images/3d-graphics-images/all2.jpg';
+   var proj4ImagePath10 = './assets/images/3d-graphics-images/all1.jpg';
+   
+   var proj4ImagePaths = [proj4ImagePath1, proj4ImagePath2, proj4ImagePath3, proj4ImagePath4, proj4ImagePath5, proj4ImagePath6, proj4ImagePath7, proj4ImagePath8, proj4ImagePath9, proj4ImagePath10];
+
+   
+   function rightArrowAction4() {
+      crementImageAction4(true);
+      crementDescriptionAction4(true);
+   }
+   
+   function leftArrowAction4() {
+      crementImageAction4(false);
+      crementDescriptionAction4(false);
+   }
+   
+   function crementImageAction4(isIncrement) {
+      imageIndex = getwrapCrementIndex(proj4ImagePaths, imageIndex, isIncrement);
+      document.getElementById('proj4-displayed-img').src=proj4ImagePaths[imageIndex];
+   }
+   
+   function crementDescriptionAction4(isIncrement) {
+      descriptionIndex = getwrapCrementIndex(proj1Descriptions, descriptionIndex, isIncrement);
+      document.getElementById('projectDescription4').innerHTML=proj1Descriptions[descriptionIndex];
+   }
+   
+   activateButton('right-arrow4', rightArrowAction4, true);
+   activateButton('left-arrow4', leftArrowAction4, true);
 
 
 }
