@@ -188,5 +188,23 @@ window.onload=function(){
    activateButton('right-arrow4', rightArrowAction4, true);
    activateButton('left-arrow4', leftArrowAction4, true);
 
+   //project 4 image functions above
 
+      $(document).ready(function(){
+       $("#project-btn").click(function () {
+          $("html, body").animate({ scrollTop: $("#projects-menu").offset().top }, 500);
+          return true;
+      });
+   });
+  
+  
+   function findPos(obj) {
+       var curtop = 0;
+       if (obj.offsetParent) {
+           do {
+               curtop += obj.offsetTop;
+           } while (obj = obj.offsetParent);
+       return [curtop];
+       }
+   }
 }
