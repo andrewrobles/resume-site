@@ -18,8 +18,8 @@ window.onload=function(){
    var proj1ImagePath10 = './assets/images/gymtracker-images/dates.jpg';
    var proj1ImagePath11 = './assets/images/gymtracker-images/log.jpg';
    
-   var proj1Description1 = 'This is the main menu and workout builder of the application. The following screenshots will walk through and demonstrate the process of creating custom workouts, entering exercise data, and viewing workout history.';
-   var proj1Description2 = 'Clicking the "Add" button leads us to this screen where the user can select which exercises he or she want to add to a custom workout.';
+   var proj1Description1 = 'This is the workout builder of the application. The following screenshots will walk through and demonstrate the process of creating custom workouts, entering exercise data, and viewing workout history.';
+   var proj1Description2 = 'Clicking the add button leads us to this screen where the user can select which exercises he or she want to add to a custom workout.';
    var proj1Description3 = 'Each time user selects an exercise it is added to a list on the workout builder screen.';
    var proj1Description4 = 'Once user is satisfied with the exercises that were selected, pressing save will prompt user to choose a name for the custom workout.';
    var proj1Description5 = 'The workout building process is complete, and user can now select from a list of custom workouts he or she created in addition to the previous.';
@@ -36,6 +36,11 @@ window.onload=function(){
    var imageIndex = 0;
    var descriptionIndex = 0;
 
+   var proj2Description1 = 'This is the main menu of the video game. Here a user can either start a new game, load a previously saved one, or quit out of the game completely.';
+   var proj2Description2 = 'If we choose to start a brand new game, the user is prompted to input a number which will serve as a seed to randomly generate a 2D world for the user to explore.';
+   var proj2Description3 = 'A world is generated with randomly placed rooms and hallways connecting them and two players are placed at bottom right corner.';
+   var proj2Description4 = 'Two players are able to simultaneously control their player using the s, d, f, e and j, k, l, i keys. User can press :q in order to quit the game or :s to save it.';
+   var proj2Descriptions = [proj2Description1, proj2Description2, proj2Description3, proj2Description4];
 
    function activateButton(name, action, isId) {
       var el = document.getElementById(name)
@@ -105,8 +110,8 @@ window.onload=function(){
    }
 
    function crementDescriptionAction2(isIncrement) {
-      descriptionIndex = getwrapCrementIndex(proj1Descriptions, descriptionIndex, isIncrement);
-      document.getElementById('projectDescription2').innerHTML=proj1Descriptions[descriptionIndex];
+      descriptionIndex = getwrapCrementIndex(proj2Descriptions, descriptionIndex, isIncrement);
+      document.getElementById('projectDescription2').innerHTML=proj2Descriptions[descriptionIndex];
    }
 
    activateButton('right-arrow2', rightArrowAction2, true);
