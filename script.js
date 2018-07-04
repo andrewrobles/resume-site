@@ -17,15 +17,24 @@ window.onload=function(){
    var proj1ImagePath9 = './assets/images/gymtracker-images/create-workout-log.jpg';
    var proj1ImagePath10 = './assets/images/gymtracker-images/dates.jpg';
    var proj1ImagePath11 = './assets/images/gymtracker-images/log.jpg';
-   var proj1Description1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit velit justo, vel imperdiet leo imperdiet elementum. Aenean semper velit in ante facilisis, et euismod lectus lacinia. Proin tempor sed ex non.';
-   var proj1Description2 = 'Nulla tristique vel odio et euismod. Praesent mattis ullamcorper quam, luctus efficitur ex placerat nec. Quisque laoreet arcu sapien, quis mollis elit tempus sed. Duis ultrices sed odio sit amet consectetur.';
-   var proj1Description3 = 'Vivamus tincidunt leo bibendum, sodales magna quis, posuere erat. Donec euismod lectus nunc, eu iaculis massa sagittis vitae. In magna augue, finibus sed mi sed, suscipit finibus diam. Aenean placerat justo vitae.';
-   var proj1Description4 = 'In sed risus ac dolor volutpat tempor. Maecenas ultricies turpis eu ligula auctor rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis pretium felis consequat ipsum.';
+   
+   var proj1Description1 = 'This is the main menu and workout builder of the application. The following screenshots will walk through and demonstrate the process of creating custom workouts, entering exercise data, and viewing workout history.';
+   var proj1Description2 = 'Clicking the "Add" button leads us to this screen where the user can select which exercises he or she want to add to a custom workout.';
+   var proj1Description3 = 'Each time user selects an exercise it is added to a list on the workout builder screen.';
+   var proj1Description4 = 'Once user is satisfied with the exercises that were selected, pressing save will prompt user to choose a name for the custom workout.';
+   var proj1Description5 = 'The workout building process is complete, and user can now select from a list of custom workouts he or she created in addition to the previous.';
+   var proj1Description6 = 'Selecting a workout from the saved workout list will display the corresponding exercises on the main menu ready to click start in order to begin the workout itself.';
+   var proj1Description7 = 'The application is now in workout mode. The user is now expected to select an exercise that he or she is currently performing.';
+   var proj1Description8 = 'The user is now able to input weight and reps performed in addition to add more sets. Once finished with the current exercise, pressing log sets will save the data that was entered.';
+   var proj1Description9 = 'Once workout is over we return to the main menu where we can now select the log button.';
+   var proj1Description10 = 'A list of dates are displayed corresponding to the days that the user worked out. Selecting a specific date will display the contents of that workout';
+   var proj1Description11= 'The date selected conveniently displays the exercise, weight, and reps in a set-by-set manner.';
+
 
    var proj1ImagePaths = [proj1ImagePath1, proj1ImagePath2, proj1ImagePath3, proj1ImagePath4, proj1ImagePath5, proj1ImagePath6, proj1ImagePath7, proj1ImagePath8, proj1ImagePath9, proj1ImagePath10, proj1ImagePath11];
-   var proj1Descriptions = [proj1Description1, proj1Description2, proj1Description3, proj1Description4];
+   var proj1Descriptions = [proj1Description1, proj1Description2, proj1Description3, proj1Description4, proj1Description5, proj1Description6, proj1Description7, proj1Description8, proj1Description9, proj1Description10, proj1Description11];
    var imageIndex = 0;
-   var descriptionIndex = 1;
+   var descriptionIndex = 0;
 
 
    function activateButton(name, action, isId) {
